@@ -17,6 +17,7 @@ def zoom_array(lst: Tuple[Any, ...], factor: int = 2) -> Tuple[Any, ...]:
 
 array: List[int] = [12, 72, 91]
 
-zoom_2x: Tuple[int, int , int, int , int, int] = zoom_array(tuple(array))
+zoom_2x: Tuple[int, int, int, int, int, int] = zoom_array(tuple(array))
 
-zoom_3x: Tuple[int, int , int, int , int, int, int, int, int] = zoom_array(tuple(array), 3)
+zoom_3x: Tuple[int, int, int, int,
+               int, int, int, int, int] = zoom_array(tuple(array), 3)
