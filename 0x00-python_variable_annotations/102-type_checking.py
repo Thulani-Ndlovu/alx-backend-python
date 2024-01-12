@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 '''Validating code using mypy'''
-from typing import Tuple, List
+from typing import Tuple, List, Any
 
 
-def zoom_array(lst: Tuple, factor: int = 2) -> Tuple:
+def zoom_array(lst: Tuple[Any, ...], factor: int = 2) -> Tuple[Any, ...]:
     '''
         Uses mypy to validate the following piece
         of code and apply any necessary changes.
     '''
-    zoomed_in: List = [
+    zoomed_in: List[Any] = [
         item for item in lst
         for i in range(int(factor))
     ]
-    return zoomed_in
+    return tuple(zoomed_in)
 
 
-array = [12, 72, 91]
+array: List[int] = [12, 72, 91]
 
-zoom_2x = zoom_array(array)
+zoom_2x: Tuple[int, int , int, int , int, int] = zoom_array(tuple(array))
 
-zoom_3x = zoom_array(array, 3)
+zoom_3x: Tuple[int, int , int, int , int, int, int, int, int] = zoom_array(tuple(array), 3)
