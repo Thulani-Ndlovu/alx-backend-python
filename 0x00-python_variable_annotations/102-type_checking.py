@@ -3,21 +3,20 @@
 from typing import Tuple, List, Any
 
 
-def zoom_array(lst: Tuple[Any, ...], factor: int = 2) -> Tuple[Any, ...]:
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
     '''
         Uses mypy to validate the following piece
         of code and apply any necessary changes.
     '''
-    zoomed_in: List[Any] = [
+    zoomed_in: List = [
         item for item in lst
         for i in range(int(factor))
     ]
-    return tuple(zoomed_in)
+    return zoomed_in
 
 
 array: List[int] = [12, 72, 91]
 
-zoom_2x: Tuple[int, int, int, int, int, int] = zoom_array(tuple(array))
+zoom_2x = zoom_array(tuple(array))
 
-zoom_3x: Tuple[int, int, int, int,
-               int, int, int, int, int] = zoom_array(tuple(array), 3)
+zoom_3x = zoom_array(tuple(array), 3)
